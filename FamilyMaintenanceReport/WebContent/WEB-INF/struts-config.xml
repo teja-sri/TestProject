@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ <!DOCTYPE struts-config
+PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<form-beans>
+
+		<form-bean name="LoginForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="userName" type="java.lang.String"
+				initial="Please enter username" />
+			<form-property name="password" type="java.lang.String"
+				initial="Please enter password" />
+		</form-bean>
+
+		<form-bean name="RegistrationForm" type="com.fer.form.RegistrationForm" />
+
+		<form-bean name="AddExpenseForm" type="com.fer.form.AddExpenseForm" />
+
+		<!-- <form-bean name="EditExpenseForm" type="org.apache.struts.validator.DynaValidatorForm"> 
+			<form-property name="type" type="java.lang.String" initial="enter expense 
+			type" /> <form-property name="date" type="java.lang.String" initial="enter 
+			date" /> <form-property name="byWhom" type="java.lang.String" initial="enter 
+			by whom" /> <form-property name="price" type="java.lang.String"/> <form-property 
+			name="numberOfItems" type="java.lang.String"/> <form-property name="total" 
+			type="java.lang.String"/> </form-bean> -->
+		<!-- <form-bean name="EditExpenseForm" type="com.fer.form.EditExpenseForm" 
+			/> -->
+
+		<form-bean name="ResetPasswordForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="currentPassword" type="java.lang.String"
+				initial="current password" />
+			<form-property name="newPassword" type="java.lang.String"
+				initial="newPassword" />
+			<form-property name="confirmPassword" type="java.lang.String"
+				initial="confirm Password" />
+		</form-bean>
+		<form-bean name="ExpenseForm" type="com.fer.form.ExpenseForm" />
+		<form-bean name="ExpenseReportForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="expenseType" type="java.lang.String"
+				initial="Please enter expenseType" />
+			<form-property name="expenseName" type="java.lang.String"
+				initial="Please enter expenseType" />
+			<form-property name="fromDate" type="java.lang.String"
+				initial="Please enter fromDate" />
+			<form-property name="toDate" type="java.lang.String"
+				initial="Please enter toDate" />
+			<form-property name="date" type="java.lang.String"></form-property>
+			<form-property name="price" type="java.lang.String"></form-property>
+			<form-property name="numOfItems" type="java.lang.String"></form-property>
+			<form-property name="total" type="java.lang.String"></form-property>
+			<form-property name="byWhom" type="java.lang.String"></form-property>
+		</form-bean>
+
+		<form-bean name="ExpenseRelatedForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="expenseGroup" type="java.lang.String"
+				initial="Please enter expense group" />
+			<form-property name="expenseName" type="java.lang.String"
+				initial="Please enter expense name" />
+		</form-bean>
+
+		<form-bean name="PersonalInfoForm" type="com.fer.form.PersonalInfoForm" />
+
+		<form-bean name="UploadPictureForm" type="com.fer.form.UploadPictureForm" />
+
+
+		<form-bean name="BalanceForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="type" type="java.lang.String"
+				initial="Please select type" />
+			<form-property name="amount" type="java.lang.Float"
+				initial="Please enter amount" />
+			<form-property name="actionType" type="java.lang.String"
+				initial="Please select action type" />
+		</form-bean>
+
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/login" name="LoginForm" type="com.fer.action.LoginAction"
+			input="/login.jsp">
+			<forward name="success" path="dashboard" />
+			<forward name="failure" path="/failure.jsp" />
+		</action>
+
+		<action path="/registration" name="RegistrationForm"
+			type="com.fer.action.RegistrationAction" input="/registration.jsp">
+			<forward name="success" path="/login.jsp" />
+			<forward name="failure" path="/RegistrationFail.jsp" />
+		</action>
+
+		<action path="/addExpense" name="AddExpenseForm"
+			type="com.fer.action.AddExpenseAction" input="addExpensePage"
+			parameter="method">
+			<forward name="addExpense" path="addExpensePage" />
+			<forward name="success" path="addExpenseSuccess" />
+			<forward name="failure" path="addExpenseFail" />
+		</action>
+
+		<action path="/updateExpenseRelated" name="ExpenseRelatedForm"
+			type="com.fer.action.ExpenseRelatedAction" input="dashboard"
+			parameter="method">
+			<forward name="displayExpenseGroup" path="displayExpenseGroup" />
+			<forward name="saveExpenseGroupStatus" path="expenseGroupStatus" />
+			<forward name="displayExpenseName" path="displayExpenseName" />
+			<forward name="saveExpenseNameStatus" path="expenseNameStatus" />
+		</action>
+
+		<action path="/updateBalance" name="BalanceForm"
+			type="com.fer.action.BalanceAction" input="dashboard" parameter="method">
+			<forward name="displayAddBalance" path="displayAddBalance" />
+			<forward name="saveBalanceStatus" path="saveBalanceStatus" />
+		</action>
+		
+		<action input="editExpenseDropDown" name="ExpenseForm" path="/editExpense"
+			scope="session" type="com.fer.action.EditExpenseAction" parameter="method">
+			<forward name="editExpenseDropDown" path="editExpenseDropDown"></forward>
+			<forward name="editExpense" path="editExpense"></forward>
+			<forward name="editExpenseUpdate" path="editExpenseStatus"></forward>
+			<forward name="editExpenseFailure" path="editExpenseFailure"></forward>
+		</action>
+
+		<!-- <action path="/editExpenseDropdown" name="EditExpenseForm" type="com.fer.action.EditExpenseAction" 
+			scope="session" input="editExpenseDropdown" parameter="method"> <forward 
+			name="editExpenseDropdown" path="editExpenseDropdown" /> <forward name="editExpense" 
+			path="editExpense" /> <forward name="successful" path="success" /> <forward 
+			name="failed" path="fail" /> </action> -->
+
+		<action path="/resetPassword" name="ResetPasswordForm"
+			type="com.fer.action.ResetPasswordAction" scope="session" input="resetPasswordPage"
+			parameter="method">
+			<forward name="resetPassword" path="resetPasswordPage" />
+			<forward name="resetSuccess" path="resetSuccess" />
+			<forward name="resetFail" path="resetFail" />
+		</action>
+
+		<action input="/DeleteExpenseDropDown" name="ExpenseForm" path="/deleteExpense"
+			scope="session" type="com.fer.action.DeleteExpenseAction" parameter="method">
+			<forward name="deleteDropDown" path="deleteExpenseDropDown" />
+			<forward name="deleteExpenseStatus" path="deleteExpenseStatus" />
+			<forward name="deleteExpensefailure" path="deleteExpensefailure" />
+		</action>
+
+		<action input="expenseReportDropDown" name="ExpenseReportForm"
+			path="/expenseReport" parameter="method" scope="session"
+			type="com.fer.action.ExpenseReportAction">
+			<forward name="expenseReportDropDown" path="expenseReportDropDown"></forward>
+			<forward name="expenseReportList" path="expenseReportList"></forward>
+			<forward name="updateExpenseReport" path="updateExpenseReport"></forward>
+
+			<forward name="editExpenseUpdate" path="editExpenseSuccessUpdate"></forward>
+			<forward name="editExpenseFailureUpdate" path="editExpenseFailureUpdate"></forward>
+			<forward name="deleteExpenseStatus" path="deleteExpenseStatus"></forward>
+			<forward name="deleteExpensefailurte" path="deleteExpensefailurte"></forward>
+		</action>
+
+		<action input="personalNameInfo" name="PersonalInfoForm" path="/personalInfo"
+			type="com.fer.action.PersonalInfoAction" parameter="method">
+			<forward name="personalNameInfo" path="personalNameInfo" />
+			<forward name="personalContact" path="personalContact" />
+			<forward name="personalAddressInfo" path="personalAddressInfo" />
+			<forward name="personalReviewInfo" path="personalReviewInfo" />
+			<forward name="personalInfoSuccess" path="personalInfoSuccess" />
+			<forward name="personalInfoFail" path="personalInfoFail" />
+
+		</action>
+
+		<!-- <action input="landingSuccess" name="UploadPictureForm" path="/upload" 
+			scope="session" type="com.fer.action.UploadPictureAction" parameter="ssss"> 
+			<forward name="landingSuccess" path="landingSuccess" /> <forward name="uploadProcess" 
+			path="uploadProcess" /> <forward name="uploadSuccess" path="uploadSuccess" 
+			/> <forward name="uploadFail" path="uploadFail" /> </action> -->
+
+		<action input="/uploadPicture.jsp" name="UploadPictureForm"
+			path="/upload" scope="session" type="com.fer.action.UploadPictureAction">
+			<forward name="landingsuccess" path="landingsuccess" />
+
+		</action>
+
+		<action input="/uploadPicture.jsp" name="UploadPictureForm"
+			path="/uploadPicture" scope="session" type="com.fer.action.SavePicAction">
+			<forward name="picStatus" path="picStatus" />
+
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="ApplicationResource" />
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+	</plug-in>
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml, /WEB-INF/validator-user.xml" />
+
+	</plug-in>
+
+	<!-- <plug-in className="com.plugin.HibernatePlugIn"> <set-property property="path" 
+		value="/hibernate.cfg.xml"/> </plug-in> -->
+</struts-config>

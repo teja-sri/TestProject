@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "tiles-config_1_1.dtd">
+<tiles-definitions>
+
+	<definition name="defaultLayout" path="/layout/mainLayout.jsp">
+		<put name="header" value="/layout/header.jsp" />
+		<put name="leftFrame" value="/layout/leftFrame.jsp" />
+		<put name="body" value="/layout/empty.jsp" />
+		<put name="footer" value="/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="dashboard" extends="defaultLayout">
+		<put name="body" value="/success.jsp" />
+	</definition>
+	<definition name="addExpensePage" extends="defaultLayout">
+		<put name="body" value="/addExpense.jsp" />
+	</definition>
+	<definition name="addExpenseSuccess" extends="defaultLayout">
+		<put name="body" value="/addExpenseSuccess.jsp" />
+	</definition>
+	<definition name="addExpenseFail" extends="defaultLayout">
+		<put name="body" value="/addExpenseFail.jsp" />
+	</definition>
+	
+	
+	<definition name="resetPasswordPage" extends="defaultLayout">
+		<put name="body" value="/ResetPassword.jsp" />
+	</definition>
+	<definition name="resetSuccess" extends="defaultLayout">
+		<put name="body" value="/ResetPasswordSuccess.jsp" />
+	</definition>
+	<definition name="resetFail" extends="defaultLayout">
+		<put name="body" value="/ResetPasswordFail.jsp" />
+	</definition>
+	
+	<definition name="editExpenseDropDown" extends="defaultLayout">
+		<put name="body" value="/EditExpenseDropDown.jsp" />
+	</definition>
+	<definition name="editExpense" extends="defaultLayout">
+		<put name="body" value="/EditExpense.jsp" />
+	</definition>
+	
+	<definition name="editExpenseStatus" extends="defaultLayout">
+		<put name="body" value="/editExpenseSuccess.jsp" />
+	</definition>
+	<definition name="editExpenseFailure" extends="defaultLayout">
+		<put name="body" value="/editExpenseFail.jsp" />
+	</definition>
+	
+	<definition name="deleteExpenseDropDown"  extends="defaultLayout">
+	  <put name="body" value="/DeleteExpenseDropDown.jsp"/>
+	</definition>
+
+	<definition name="deleteExpenseStatus"  extends="defaultLayout">
+	  <put name="body" value="/deleteExpenseStatus.jsp"/>
+	  </definition>
+	  
+	  <definition name="deleteExpensefailure"  extends="defaultLayout">
+	  <put name="body" value="/deleteExpensefailure.jsp"/>
+	</definition>
+	
+	<definition name="expenseReportDropDown"  extends="defaultLayout">
+	 <put name="body"  value="/ExpenseReportDropDown.jsp" />
+	</definition>
+	
+	<definition name="expenseReportList"  extends="defaultLayout">
+	 <put name="body"  value="/ExpenseReportList.jsp" />
+	</definition>
+	
+	<definition name="updateExpenseReport"  extends="defaultLayout">
+	 <put name="body"  value="/EditExpense.jsp" />
+	</definition>
+	
+	<definition name="editExpenseSuccessUpdate" extends="defaultLayout">
+		<put name="body" value="/EditExpenseSuccess.jsp" />
+	</definition>
+	<definition name="editExpenseFailureUpdate" extends="defaultLayout">
+		<put name="body" value="/EditExpenseFailure.jsp" />
+	</definition>
+	
+	<definition name="deleteExpenseStatus" extends="defaultLayout">
+		<put name="body" value="/deleteExpenseSuccess.jsp" />
+	</definition>
+	
+	<definition name="deleteExpensefailure" extends="defaultLayout">
+		<put name="body" value="/deleteExpensefailure.jsp" />
+	</definition>
+	
+	<definition name="personalNameInfo" extends="defaultLayout">
+		<put name="body" value="/personalNameInfo.jsp" />
+	</definition>
+	
+	<definition name="personalContact" extends="defaultLayout">
+		<put name="body" value="/personalContactInfo.jsp" />
+	</definition>
+	
+	<definition name="personalAddressInfo" extends="defaultLayout">
+		<put name="body" value="/personalAddressInfo.jsp" />
+	</definition>
+	
+	<definition name="personalReviewInfo" extends="defaultLayout">
+		<put name="body" value="/personalReviewInfo.jsp" />
+	</definition>
+	
+	<definition name="personalInfoSuccess" extends="defaultLayout">
+		<put name="body" value="/personalInfoSuccess.jsp" />
+	</definition>
+	
+	<definition name="personalInfoFail" extends="defaultLayout">
+		<put name="body" value="/personalInfoFail.jsp" />
+	</definition>
+	
+	<definition name="landingsuccess" extends="defaultLayout">
+		<put name="body" value="/uploadPicture.jsp" />
+	</definition>
+	
+	<definition name="picStatus" extends="defaultLayout">
+		<put name="body" value="/uploadPictureStatus.jsp" />
+	</definition>
+	
+	<!-- <definition name="landingSuccess" extends="defaultLayout">
+		<put name="body" value="/uploadPicture.jsp" />
+	</definition>
+	
+	<definition name="uploadProcess" extends="defaultLayout">
+		<put name="body" value="/uploadPicturePost.jsp" />
+	</definition> -->
+	
+	<!-- <definition name="uploadSuccess" extends="defaultLayout">
+		<put name="body" value="/uploadPictureSuccess.jsp" />
+	</definition>
+	
+	<definition name="uploadFail" extends="defaultLayout">
+		<put name="body" value="/uploadPictureFail.jsp" />
+	</definition> -->
+	
+	<definition name="displayExpenseGroup" extends="defaultLayout">
+		<put name="body" value="/displayExpenseGroup.jsp" />
+	</definition>
+	
+	<definition name="expenseGroupStatus" extends="defaultLayout">
+		<put name="body" value="/expenseGroupStatus.jsp" />
+	</definition>
+	
+	<definition name="displayExpenseName" extends="defaultLayout">
+		<put name="body" value="/displayExpenseName.jsp" />
+	</definition>
+	
+	<definition name="expenseNameStatus" extends="defaultLayout">
+		<put name="body" value="/expenseNameStatus.jsp" />
+	</definition>
+	
+	<definition name="displayAddBalance" extends="defaultLayout">
+		<put name="body" value="/displayAddBalance.jsp" />
+	</definition>
+	
+	<definition name="saveBalanceStatus" extends="defaultLayout">
+		<put name="body" value="/saveBalanceStatus.jsp" />
+	</definition>
+	
+</tiles-definitions>
