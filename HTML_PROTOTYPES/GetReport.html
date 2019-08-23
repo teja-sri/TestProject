@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>DashBoard</title>
+	</head>
+	<body>
+		<form action="Dashboard.html">
+			<table border="1" align="center" height="500px" width="800px" cellSpacing="0" >
+				<tr height="100px">
+					<td colspan="2" align="center">Family Expenses Report   User:ABCD</td>
+				</tr>
+				<tr>
+					<td  width="200px">
+						<a href="AddExpense.html">Add Expenses</a><BR>
+						<a href="EditExpense.html">Edit Expenses</a><BR>
+						<a href="DeleteExpense.html">Delete Expenses</a><BR>
+						<a href="ExpenseReport.html">Expense Report</a><BR>
+						<a href="ResetPassword.html">Reset Password</a><BR>
+						<a href="UpdatManual.html">UpdateManual</a>
+					</td>
+					<td align ="center" width="500px">
+							<table border="1px" align="center" cellSpacing="0" cellPadding="2px">
+							<tr>
+								<th>Expense Type</th>
+								<th>Date</th>
+								<th>Price</th>
+								<th>Number of items</th>
+								<th>By Whom</th>
+								<th>Action</th>
+							</tr>
+							<tr>
+							<td><input type ="text" name="expenseType"></td>
+							<td><input type ="text" name="date"></td>
+							<td><input type ="text" name="price"></td>
+							<td><input type ="text" name="numberOfItems"></td>
+							<td><input type ="text" name="byWhom"></td>
+							<td>
+							<a href="EditExpense.html">Edit</a>
+							<a href="DeleteExpense.html">Delete</a>
+							</td>
+							</tr>	
+						</table>
+					</td>
+				</tr>
+				<tr height="100px">
+					<td colspan="2" align="center" >
+					Footer...
+					</td>
+				</tr>	
+			</table>
+		</form>
+	</body>
+</html>
